@@ -1,0 +1,17 @@
+{
+  "name": "Мягкие окна в Омске",
+  "short_name": "Мягкие окна",
+  "description": "Мягкие окна для беседок, веранд и террас в Омске и Омской области",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf2",
+  "theme_color": "#6b3f16",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "assets/icon-600.webp",
+      "sizes": "600x600",
+      "type": "image/webp"
+    }
+  ]
+}
