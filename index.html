@@ -287,7 +287,45 @@
         </form>
       </div>
     </section>
+<!-- ГОТОВЫЙ КОД: www.мягкиеокна55.рф → CRM + текущий Telegram оставляем -->
 
+<script>
+const CRM_LEAD_URL = 'https://crm-three-eta-95.vercel.app/api/site-lead';
+
+async function sendLeadToCRM(lead) {
+  const res = await fetch(CRM_LEAD_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: lead.name || '',
+      phone: lead.phone || '',
+      address: lead.address || '',
+      message: lead.message || '',
+      source: 'Сайт мягкиеокна55.рф'
+    })
+  });
+
+  if (!res.ok) {
+    console.error('CRM lead error:', await res.text());
+    return false;
+  }
+
+  return true;
+}
+
+/*
+Куда вставить:
+Внутрь текущего обработчика формы, ПОСЛЕ или ПЕРЕД отправкой в Telegram.
+
+Пример:
+await sendLeadToCRM({
+  name: name,
+  phone: phone,
+  address: address,
+  message: message
+});
+*/
+</script>
     <section class="section" id="seo">
       <div class="container seo-text">
         <span class="section-tag">Для поиска в Омске</span>
